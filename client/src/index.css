@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-dark-600;
+  }
+  
+  body {
+    @apply bg-dark-900 text-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  ::selection {
+    @apply bg-primary/30;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-dark-700 hover:bg-dark-600 text-white font-medium rounded-lg transition-colors border border-dark-600;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border border-primary text-primary hover:bg-primary/10 font-medium rounded-lg transition-colors;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 bg-dark-800 border border-dark-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-primary transition-colors;
+  }
+
+  .card {
+    @apply bg-dark-800 rounded-xl border border-dark-600 p-6;
+  }
+
+  .card-hover {
+    @apply card hover:border-primary/50 transition-colors cursor-pointer;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent-cyan bg-clip-text text-transparent;
+  }
+
+  .neon-border {
+    @apply border border-accent-cyan/30 shadow-[0_0_20px_rgba(0,240,255,0.1)];
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #8b5cf6 transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: #8b5cf6;
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: #7c3aed;
+  }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(139, 92, 246, 0.7); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Статусы пользователей */
+.status-online {
+  @apply w-3 h-3 rounded-full bg-accent-green border-2 border-dark-800;
+}
+
+.status-offline {
+  @apply w-3 h-3 rounded-full bg-gray-500 border-2 border-dark-800;
+}
+
+/* Роли пользователей */
+.role-founder {
+  @apply text-yellow-400 font-bold;
+}
+
+.role-admin {
+  @apply text-red-400 font-bold;
+}
+
+.role-moderator {
+  @apply text-blue-400 font-bold;
+}
+
+.role-verified {
+  @apply text-accent-green font-bold;
+}
+
+.role-user {
+  @apply text-gray-400;
+}

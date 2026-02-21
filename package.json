@@ -1,8 +1,0 @@
-{
-  "name": "neomarket",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "cd server && npm start",
-    "build": "cd client && npm run build"
-  }
-}
